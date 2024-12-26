@@ -15,9 +15,9 @@ export const weatherApi = createApi({
             transformResponse: (data: WeatherResponse) => ({
                 city: data.name,
                 country: data.sys.country,
-                sunset: data.sys.sunset,
+                sunset: data.sys.sunset * 1000,
                 pressure: data.main.pressure,
-                temp: data.main.temp * 1000
+                temp: data.main.temp
             })
         })
     })
